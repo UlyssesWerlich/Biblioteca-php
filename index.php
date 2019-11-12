@@ -11,7 +11,7 @@
         <h1>Login Biblioteca USJ</h1>
     </div>
     <div class="formulario">
-        <form name="login" method="POST" action="pagina/paginaInicial.php">
+        <form name="login" method="POST" action="controlador/controladorLogin.php">
             <p>Login:<br/>
                 <input type="text" name="login"></p>  
             <p>Senha:<br/>
