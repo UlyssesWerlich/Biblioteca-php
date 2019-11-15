@@ -41,7 +41,7 @@ try {
         echo "<h2>Editar usuário</h2>
         <div class='formulario'>
             <form name='usuario' method='POST' action='../controlador/controladorUsuario.php'>";
-        echo "<p>Id do aluno</p>
+        echo "<p>Id do usuário</p>
                 <input type='text' name='id_usuario' value='$row[id_usuario]' readonly></p>";
         echo "<p>Nome<br/>
                 <input type='text' name='nome' value='$row[nome]'></p>  
@@ -57,8 +57,8 @@ try {
                 <input name='permissaoP' type='checkbox' value='P'>Gerenciar Professor
                 <input name='permissaoU' type='checkbox' value='U'>Gerenciar Usuário</p>
 
-            <input type='submit' name='Botao' value='Alterar'>
-            <input type='submit' name='Botao' value='Excluir'>
+            <input type='submit' name='botao' value='Alterar'>
+            <input type='submit' name='botao' value='Excluir'>
         </form>
     </div>";
     }

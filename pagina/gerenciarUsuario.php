@@ -38,7 +38,7 @@
 
             foreach ($resultado as $row){
                 echo "
-                    <div>
+                    <div class='blocoUsuarios'>
                         <h3>$row[nome]</h3>
                         <p><a href='editarUsuario.php?login=$row[login]'>$row[login]</a><br/>
                         CPF: $row[cpf] <br/>
@@ -46,7 +46,7 @@
                     </div>
                 ";
             }
-            echo "<div>
+            echo "<div class='blocoUsuarios'>
                 <p><a href='adicionarUsuario.php'>Adicionar Usuário</a></p>
             </div>";
 

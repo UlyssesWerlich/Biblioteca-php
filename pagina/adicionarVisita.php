@@ -25,17 +25,17 @@
 
     <h2>Informar visita</h2>
     <div class='formulario'>
-        <form name='visita' method='POST' action=''>
+        <form name='visita' method='POST' action='../controlador/controladorVisita.php'>
             <p>Professor:</p>
                 <input type='text' name='professor'/>
             <p>Tem Aluno?</p>
-                <input type='radio' name='aluno' value='Sim'/>Sim
-                <input type='radio' name='aluno' value='Não'/>Não
+                <input type='radio' name='aluno' value='S'/>Sim
+                <input type='radio' name='aluno' value='N'/>Não
             <p>Quantidade de alunos</p>
                 <input type='text' name='qtdAlunos'/>
             <p>Observações</p>
                 <input type='text' name='observacao'/>
-            <p><input type='submit' name='Enviar' value='Enviar'/></p>
+            <p><input type='submit' name='botao' value='Cadastrar'/></p>
             
 
         </form>

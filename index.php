@@ -22,5 +22,13 @@
     <div>
         <a href="novaSenha.php" >Esqueceu a senha?</a>
     </div>
+
+    <?php
+    if (isset($_GET['usuario'])){
+        echo "<script>alert('Usuário inexistente')</script>";
+    } elseif (isset($_GET['senha'])){
+        echo "<script>alert('Senha inválida')</script>";
+    }
+    ?>
 </body>
 </html>

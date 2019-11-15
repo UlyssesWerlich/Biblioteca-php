@@ -24,7 +24,7 @@
     </ul>
     <h2>Adicionar usuário</h2>
     <div class='formulario'>
-        <form name='usuario' method='GET' action='../controlador/controladorUsuario.php'>
+        <form name='usuario' method='POST' action='../controlador/controladorUsuario.php'>
             <p>Nome</p>
                 <input type='text' name='nome'/>
             <p>Login</p>
@@ -38,7 +38,7 @@
                 <input name="permissaoR" type="checkbox" value="R">Gerar relatório
                 <input name="permissaoP" type="checkbox" value="P">Gerenciar Professor
                 <input name="permissaoU" type="checkbox" value="U">Gerenciar Usuário</p>
-            <p><input type='submit' name='Enviar' value='Enviar'/></p>
+            <p><input type='submit' name='botao' value='Cadastrar'/></p>
             
         </form>
     </div>

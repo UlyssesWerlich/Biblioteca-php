@@ -32,7 +32,7 @@
                 <input type='password' name='novaSenha'>
             <p>Confirmar nova senha</p>
                 <input type='password' name='confirmarNovaSenha'><br/><br/>
-                <input type='submit' name='Senha' value='Trocar senha'>
+                <input type='submit' name='botao' value='Senha'>
         </form>
     </div>
 </body>
