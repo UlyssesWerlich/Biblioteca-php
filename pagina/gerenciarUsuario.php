@@ -22,23 +22,36 @@
         <ul class="opcao" id="menu7"><a href="gerenciarUsuario.php">Gerenciar Usuário</a></ul>
 
     </ul>
+    <div class='listaUsuarios'>
+        <h2>Usuários</h2>
+        <?php
 
-    <h2>Informar visita</h2>
-    <div class='formulario'>
-        <form name='visita' method='POST' action=''>
-            <p>Professor:</p>
-                <input type='text' name='professor'/>
-            <p>Tem Aluno?</p>
-                <input type='radio' name='aluno' value='Sim'/>Sim
-                <input type='radio' name='aluno' value='Não'/>Não
-            <p>Quantidade de alunos</p>
-                <input type='text' name='qtdAlunos'/>
-            <p>Observações</p>
-                <input type='text' name='observacao'/>
-            <p><input type='submit' name='Enviar' value='Enviar'/></p>
-            
+            try {
+                $pdo = new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
+            } catch (PDOException $e){
+                echo $e->getMessage();
+            }
 
-        </form>
+            $consulta = $pdo->prepare("select nome, login, cpf, telefone from usuario");
+            $consulta->execute();
+            $resultado = $consulta->fetchAll();
+
+            foreach ($resultado as $row){
+                echo "
+                    <div>
+                        <h3>$row[nome]</h3>
+                        <p><a href='editarUsuario.php?login=$row[login]'>$row[login]</a><br/>
+                        CPF: $row[cpf] <br/>
+                        Telefone: $row[telefone] </p>
+                    </div>
+                ";
+            }
+            echo "<div>
+                <p><a href='adicionarUsuario.php'>Adicionar Usuário</a></p>
+            </div>";
+
+        ?>
+
     </div>
 
 </body>

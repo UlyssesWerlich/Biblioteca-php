@@ -22,22 +22,24 @@
         <ul class="opcao" id="menu7"><a href="gerenciarUsuario.php">Gerenciar Usuário</a></ul>
 
     </ul>
-
-    <h2>Informar visita</h2>
+    <h2>Adicionar usuário</h2>
     <div class='formulario'>
-        <form name='visita' method='POST' action=''>
-            <p>Professor:</p>
-                <input type='text' name='professor'/>
-            <p>Tem Aluno?</p>
-                <input type='radio' name='aluno' value='Sim'/>Sim
-                <input type='radio' name='aluno' value='Não'/>Não
-            <p>Quantidade de alunos</p>
-                <input type='text' name='qtdAlunos'/>
-            <p>Observações</p>
-                <input type='text' name='observacao'/>
+        <form name='usuario' method='GET' action='../controlador/controladorUsuario.php'>
+            <p>Nome</p>
+                <input type='text' name='nome'/>
+            <p>Login</p>
+                <input type='text' name='login'/>
+            <p>CPF</p>
+                <input type='text' name='cpf'/>
+            <p>Telefone</p>
+                <input type='text' name='telefone'/>
+            <p>Selecione as permissões do usuário:<br/>
+                <input name="permissaoV" type="checkbox" value="V">Adicionar visitas
+                <input name="permissaoR" type="checkbox" value="R">Gerar relatório
+                <input name="permissaoP" type="checkbox" value="P">Gerenciar Professor
+                <input name="permissaoU" type="checkbox" value="U">Gerenciar Usuário</p>
             <p><input type='submit' name='Enviar' value='Enviar'/></p>
             
-
         </form>
     </div>
 

@@ -22,24 +22,18 @@
         <ul class="opcao" id="menu7"><a href="gerenciarUsuario.php">Gerenciar Usuário</a></ul>
 
     </ul>
-
-    <h2>Informar visita</h2>
+    
+    <h2>Trocar senha</h2>
     <div class='formulario'>
-        <form name='visita' method='POST' action=''>
-            <p>Professor:</p>
-                <input type='text' name='professor'/>
-            <p>Tem Aluno?</p>
-                <input type='radio' name='aluno' value='Sim'/>Sim
-                <input type='radio' name='aluno' value='Não'/>Não
-            <p>Quantidade de alunos</p>
-                <input type='text' name='qtdAlunos'/>
-            <p>Observações</p>
-                <input type='text' name='observacao'/>
-            <p><input type='submit' name='Enviar' value='Enviar'/></p>
-            
-
+        <form method="POST" action='../controlador/controladorSenha.php'>
+            <p>Senha atual</p>
+                <input type='password' name='senhaAtual'>
+            <p>Nova senha</p>
+                <input type='password' name='novaSenha'>
+            <p>Confirmar nova senha</p>
+                <input type='password' name='confirmarNovaSenha'><br/><br/>
+                <input type='submit' name='Senha' value='Trocar senha'>
         </form>
     </div>
-
 </body>
 </html>

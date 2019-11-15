@@ -5,7 +5,7 @@ body {
 }
 
 .menu{
-    background-color: burlywood;
+    background-color:thistle;
     margin: 0 20px 0 0;
     padding: 10px 20px 80px;
     width: 200px;
@@ -13,9 +13,16 @@ body {
     float: left;
 }
 
-.itens{
+.opcao{
     width: 150px;
     padding: 10px;
+}
+
+.titulo{
+    width: 150px;
+    padding: 10px;
+    color:royalblue;
+
 }
 
 p{
@@ -37,7 +44,7 @@ img{
     height: 300px ;
 }
 
-.itens:hover{
+.opcao:hover{
     background-color:white;
     color: black;
 }
