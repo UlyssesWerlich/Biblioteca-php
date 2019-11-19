@@ -13,7 +13,7 @@ try {
     echo $e->getMessage();
 }
 
-    $consulta = $pdo->prepare("select login, senha from usuario where login like '$login'");
+    $consulta = $pdo->prepare("select login, senha, nome from usuario where login like '$login'");
     $consulta->execute();
     $resultado = $consulta->fetchAll();
 
@@ -22,7 +22,8 @@ try {
             $senhaBanco = $row['senha'];
             $senha = $_POST['senha'];
             if ($senha == $senhaBanco){
-                header("Location: ../pagina/paginaInicial.php");
+                $nome = $row['nome'];
+                header("Location: ../pagina/paginaInicial.php?login=$login&nome=$nome");
             } else {
                 header("Location: ../index.php?senha=false");
             }

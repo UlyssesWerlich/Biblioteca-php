@@ -1,30 +1,30 @@
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Biblioteca USJ</title>
-    <link rel="stylesheet" href="../estilo/estilo.css"/>
-
-</head>
-
-<body>
-    <div id="cabecalho">
-        <h1>USJ</h1>
-    </div>
-    <ul class="menu">
-        <ul class="opcao" id="menu1"><a href="paginaInicial.php">Início</a></ul>
-        <ul class="titulo" id="titulo1">Biblioteca</ul>
-        <ul class="opcao" id="menu2"><a href="adicionarVisita.php">Adicionar Visita</a></ul>
-        <ul class="opcao" id="menu3"><a href="gerarRelatorio.php">Relatórios Externos</a></ul>
-        <ul class="opcao" id="menu4"><a href="exportarRelatorio.php">Exportar Relatórios</a></ul>
-        <ul class="titulo" id="titulo2">Configurações</ul>
-        <ul class="opcao" id="menu5"><a href="trocarSenha.php">Trocar Senha</a></ul>
-        <ul class="opcao" id="menu6"><a href="gerenciarProfessor.php">Gerenciar Professor</a></ul>
-        <ul class="opcao" id="menu7"><a href="gerenciarUsuario.php">Gerenciar Usuário</a></ul>
-
-    </ul>
 <?php
+    $titulo = "Gerar Relatório";
+    include('../paginaBase/cabecalho.php');
 
 ?>
 
-</body>
-</html>
+    <div class='formulario'>
+        <form name='visita' method='POST' action='../controlador/controladorVisita.php'>
+            <p>Data de início da consulta<br>
+                <input type="text" name="dataInicio" placeholder="dd/mm/yyyy" size="10" maxlength="10" minlength="10"> </p>
+            </p>
+
+            <p>Data de final da consulta<br>
+                <input type="text" name="dataFim" placeholder="dd/mm/yyyy" size="10" maxlength="10" minlength="10"> </p>
+            </p>
+            <p>Selecione o tipo de relatório<br/>
+                <input name="turno" type="radio" id="turno" value="Manhã">Relatório de Visitas<br/>
+                <input name="turno" type="radio" id="turno" value="Tarde">Relatório de Ocorrências<br/>
+                <input name="turno" type="radio" id="turno" value="Noite">Relatório de Quantitativo de Livros</p>
+            <p>
+                <input type='submit' name='botao' value='Cadastrar'/>
+            </p>
+            
+
+        </form>
+    </div>
+
+<?php
+    include('../paginaBase/rodape.php');
+?>

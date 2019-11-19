@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Biblioteca USJ</title>
-    <link rel="stylesheet" href="estilo/estilo.css"/>
+    <link rel="stylesheet" href="estilo/estiloIndex.css"/>
 
 </head>
 
@@ -30,5 +30,3 @@
         echo "<script>alert('Senha inválida')</script>";
     }
     ?>
-</body>
-</html>
