@@ -7,8 +7,8 @@
             <p>Quantidade de pessoas que entraram:</p>
                 <input type='text' name='qtdPessoas'/>
             <p>Entrada de:<br/><br/>
-                <input name="visita" type="radio" value="professor">Professor
-                <input name="visita" type="radio" value="aluno">Aluno
+                <input name="tipoEntrada" type="radio" value="professor">Professor
+                <input name="tipoEntrada" type="radio" value="aluno">Aluno
             <p><input type='submit' name='botao' value='Cadastrar'/></p>
             
 

@@ -1,29 +1,26 @@
 <?php
 
-$titulo = "Registrar visita";
+$titulo = "Registrar Visita";
 include('../paginaBase/cabecalho.php');
 
-$id_professor = $_POST['professor'];
-$aluno = $_POST['aluno'];
-$qtdAlunos = $_POST['qtdAlunos'];
-$observacao = $_POST['observacao'];
+$qtdPessoas = $_POST['qtdPessoas'];
+$tipoEntrada = $_POST['tipoEntrada'];
 $botao = $_POST['botao'];
 
 try{
     $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
 }catch(PDOException $e){
-    echo $e->getMessage();
+    echo "<p>Erro ao acessar o controlador</p>";
+    echo "<script> console('$e->getMessage()')";
 }
-if ($botao =='Cadastrar') {
 
     $data = date('Y-m-d H:m:s');
-    $inserir=$pdo->prepare("Insert into visita(qtdAlunos, dataVisita, observacao, id_professor) Values('$qtdAlunos', '$data','$observacao', '$id_professor');");
+    $inserir=$pdo->prepare("Insert into visita(qtdPessoas, dataVisita, tipoEntrada) Values('$qtdPessoas', '$data','$tipoEntrada');");
 	$inserir->execute();
 	$pdo = null;
-    echo "<p>Visita cadastrada com sucesso</p>";
-} else {
-    echo "<p>Erro ao acessar o controlador</p>";
-}
+    echo "<p>Visita registrada com sucesso</p><br/>
+            <p><a href='../pagina/adicionarVisita.php'>Registrar próxima visita</a></p>";
+
 
 include('../paginaBase/rodape.php');
 ?>

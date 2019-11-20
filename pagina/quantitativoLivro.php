@@ -12,7 +12,7 @@
                 <input type='text' name='livrosDevolvidos'/>
             <p>Novos livros</p>
                 <input type='text' name='livrosNovos'/>
-            <p><input type='submit' name='botao' value='Cadastrar'/></p>
+            <p><input type='submit' name='botao' value='Registrar'/></p>
             
 
         </form>
