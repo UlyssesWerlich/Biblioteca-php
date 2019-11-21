@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,7 +21,7 @@
         <ul class="titulo" id="titulo2">Configurações</ul>
         <ul class="opcao" id="menu6"><a href="../pagina/trocarSenha.php">Trocar Senha</a></ul>
         <ul class="opcao" id="menu7"><a href="../pagina/gerenciarUsuario.php">Gerenciar Usuário</a></ul>
-        <ul class="opcao" id="menu8"><a href="../pagina/gerenciarUsuario.php">Log Out</a></ul>
+        <ul class="opcao" id="menu8"><a href="../controlador/logoff.php">Log Out</a></ul>
 
     </ul>
     <h2><?php echo $titulo; ?></h2>
