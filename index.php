@@ -16,7 +16,7 @@
                 <input type="text" name="login"></p>  
             <p>Senha:<br/>
                 <input type="password" name="senha"></p>  
-                <input type="submit" name="Autenticar">
+                <input type="submit" name="botao" value="Login">
         </form>
     </div>
     <div>
