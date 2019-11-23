@@ -16,10 +16,11 @@
     $telefone = $_POST['telefone'];
     $botao = $_POST['botao'];
     $v = (isset($_POST['permissaoV']))?($_POST['permissaoV']):("");
+    $o = (isset($_POST['permissaoO']))?($_POST['permissaoO']):("");
+    $l = (isset($_POST['permissaoL']))?($_POST['permissaoL']):("");
     $r = (isset($_POST['permissaoR']))?($_POST['permissaoR']):("");
-    $p = (isset($_POST['permissaoP']))?($_POST['permissaoP']):("");
     $u = (isset($_POST['permissaoU']))?($_POST['permissaoU']):("");
-    $permissao = "$v$r$p$u";
+    $permissao = "$v$o$l$r$u";
 
 
     try{

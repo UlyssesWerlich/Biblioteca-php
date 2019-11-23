@@ -23,6 +23,16 @@
         <a href="novaSenha.php" >Esqueceu a senha?</a>
     </div>
 
+    <script>
+        function validarSenha(input){
+        if(input.valueOf !== document.getElementById("senha").value){
+            input.setCustomValidity('Senha não são iguais, favor repita!');
+        }else{
+            input.setCustomValidity('');
+        }
+    }
+    </script>
+
 <?php
     if (isset($_GET['usuario'])){
         echo "<script>alert('Usuário inexistente')</script>";

@@ -20,7 +20,6 @@ body {
     width: 150px;
     padding: 10px;
     color:royalblue;
-
 }
 
 p{
@@ -45,4 +44,9 @@ img{
 .opcao:hover{
     background-color:white;
     color: black;
+}
+
+#validar{
+    font-size: 13px;
+    color: red;
 }

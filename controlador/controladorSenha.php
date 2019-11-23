@@ -5,25 +5,32 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-        $logado = $_SESSION['login'];
 
     $titulo = "Editar usuário";
     include('../paginaBase/cabecalho.php');
 
-    $senhaAtual = $_POST['senhaAtual'];
-    $senhaAtual = $_POST['senhaAtual'];
-    $confirmarNovaSenha = $_POST['confirmarNovaSenha'];
+    $senha = $_POST['senhaAtual'];
+    $senhaNova = $_POST['senhaNova'];
+    $login = $_SESSION['login'];
 
-
-
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
+    try {
+        $pdo = new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
+    } catch (PDOException $e) {
         echo $e->getMessage();
     }
 
-    $inserir=$pdo->prepare("update usuario set senha='$senha' where login like '$login';");
-	$inserir->execute();
-	$pdo = null;
-    echo "<p>Senha alterada com sucesso</p>";
+    $verificarSenha = $pdo->prepare("select login from usuario where login like '$login' and senha like '$senha';");
+    $verificarSenha->execute();
+    $resultado = $verificarSenha->fetchAll();
+
+    if (!empty($resultado)){
+
+        $alterarSenha=$pdo->prepare("update usuario set senha='$senhaNova' where login like '$login';");
+        $alterarSenha->execute();
+        $pdo = null;
+        echo "<p>Senha alterada com sucesso</p>";
+
+    } else {
+        header("Location: ../pagina/trocarSenha.php?false");
+    }
 ?>

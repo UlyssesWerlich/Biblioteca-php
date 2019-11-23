@@ -16,7 +16,7 @@ if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tr
             <p>Quantidade de pessoas que entraram:</p>
                 <input type='text' name='qtdPessoas'/>
             <p>Entrada de:<br/><br/>
-                <input name="tipoEntrada" type="radio" value="professor">Professor
+                <input name="tipoEntrada" type="radio" value="professor" checked>Professor
                 <input name="tipoEntrada" type="radio" value="aluno">Aluno
             <p><input type='submit' name='botao' value='Cadastrar'/></p>
             

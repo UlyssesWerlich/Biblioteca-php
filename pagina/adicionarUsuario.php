@@ -6,7 +6,6 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-    $logado = $_SESSION['login'];
 
     $titulo = "Adicionar usuário";
     include('../paginaBase/cabecalho.php');
@@ -22,9 +21,10 @@
             <p>Telefone</p>
                 <input type='text' name='telefone'/>
             <p>Selecione as permissões do usuário:<br/>
-                <input name="permissaoV" type="checkbox" value="V">Adicionar visitas
-                <input name="permissaoR" type="checkbox" value="R">Gerar relatório
-                <input name="permissaoP" type="checkbox" value="P">Gerenciar Professor
+                <input name="permissaoV" type="checkbox" value="V" checked>Registrar Visita
+                <input name="permissaoO" type="checkbox" value="O">Registrar Ocorrência
+                <input name="permissaoL" type="checkbox" value="L">Quantitativo de livros
+                <input name="permissaoR" type="checkbox" value="R">Relatórios
                 <input name="permissaoU" type="checkbox" value="U">Gerenciar Usuário</p>
             <p><input type='submit' name='botao' value='Cadastrar'/></p>
             

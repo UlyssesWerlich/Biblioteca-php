@@ -23,7 +23,7 @@ if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tr
                 <input type="date" name="dataFim" size="10" maxlength="10" minlength="10"> </p>
             </p>
             <p>Selecione o tipo de relatório<br/>
-                <input name="tipo" type="radio" value="visita">Relatório de Visitas<br/>
+                <input name="tipo" type="radio" value="visita" checked="checked">Relatório de Visitas<br/>
                 <input name="tipo" type="radio" value="ocorrencia">Relatório de Ocorrências<br/>
                 <input name="tipo" type="radio" value="livro">Relatório de Quantitativo de Livros</p>
             <p>

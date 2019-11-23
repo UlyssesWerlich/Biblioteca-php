@@ -14,7 +14,7 @@
         echo $e->getMessage();
     }
 
-    $consulta = $pdo->prepare("select login, senha, nome from usuario where login like '$login'");
+    $consulta = $pdo->prepare("select login, senha, nome, permissao from usuario where login like '$login'");
     $consulta->execute();
     $resultado = $consulta->fetchAll();
 
@@ -25,13 +25,15 @@
             $senha = $_POST['senha'];
 
             if ($senha == $senhaBanco){
-                $_SESSION['nome'] = $row['nome'];
+                $_SESSION['nome_usuario'] = $row['nome'];
                 $_SESSION['login'] = $login;
                 $_SESSION['senha'] = $senha;
+                $_SESSION['permissao'] = $row['permissao'];
+
                 header("Location: ../pagina/paginaInicial.php");
 
             } else {
-                unset ($_SESSION['nome']);
+                unset ($_SESSION['nome_usuario']);
                 unset ($_SESSION['login']);
                 unset ($_SESSION['senha']);
                 header("Location: ../index.php?senha=false");

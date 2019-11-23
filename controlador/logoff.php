@@ -1,7 +1,13 @@
 <?php
+    session_start();
 
-session_destroy();
-hearder("Location: ../index.php");
-exit;
+    if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header('location: ../index.php');
+    }
 
+    session_destroy();
+    header('location: ../index.php');
+    exit;
 ?>

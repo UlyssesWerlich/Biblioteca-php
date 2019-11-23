@@ -1,5 +1,11 @@
 <?php
     session_start();
+    if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header('location: ../index.php');
+    }
+
     $titulo = "Relatório";
     include('../paginaBase/cabecalho.php');
 
@@ -63,7 +69,8 @@
                                     sum(case when (tipoEntrada = 'professor') then qtdPessoas else 0 end) as contagemProfessor
                                     from visita 
                                     where CAST(dataVisita AS DATE) BETWEEN ('$dataInicio') AND ('$dataFim') 
-                                    group by data;");
+                                    group by data
+                                    order by data DESC;");
 
         $consulta2->execute();
         $resultado2 = $consulta2->fetchAll();
@@ -156,11 +163,10 @@
         }
         echo "</table><br/><br/>";
 
-
         $consulta2=$pdo->prepare("select DATE_FORMAT( dataRegistro, '%d/%c/%Y' ) AS data, 
-                                    sum(livrosEmprestados) as contagemEmprestados,
-                                    sum(livrosDevolvidos) as contagemDevolvidos,
-                                    sum(livrosNovos) as contagemNovos
+                                    livrosEmprestados,
+                                    livrosDevolvidos,
+                                    livrosNovos
                                     from qtdlivros 
                                     where CAST(dataRegistro AS DATE) BETWEEN ('$dataInicio') AND ('$dataFim') 
                                     group by data;");
@@ -179,12 +185,12 @@
                         </tr>";
 
         foreach ($resultado2 as $row2){
-
+ 
                 echo "<tr>
                     <td>$row2[data]</td>
-                    <td>$row2[contagemEmprestados]</td>
-                    <td>$row2[contagemDevolvidos]</td>
-                    <td>$row2[contagemNovos]</td>
+                    <td>$row2[livrosEmprestados]</td>
+                    <td>$row2[livrosDevolvidos]</td>
+                    <td>$row2[livrosNovos]</td>
                 </tr>";
         }
         echo "</table>";
