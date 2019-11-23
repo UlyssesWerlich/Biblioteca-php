@@ -7,12 +7,8 @@ if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tr
     unset($_SESSION['senha']);
     header('location: ../index.php');
 }
-    $logado = $_SESSION['login'];
-
-    $titulo = "Bem vindo";
     include('../paginaBase/cabecalho.php');
-    
-    $nome = $_SESSION['nome_usuario'];
-    include('../paginaBase/rodape.php');
 ?>
+
+<h2>Bem vindo</h2>
 

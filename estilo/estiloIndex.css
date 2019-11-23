@@ -1,50 +1,58 @@
 body {
-    width: 900px;
-    margin: 30px auto;
+    background-color: rgb(48, 48, 48);
     font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin: 50px 8px;
 }
 
-.menu{
-    background-color:thistle;
-    margin: 0 20px 0 0;
-    padding: 10px 20px 80px;
-    width: 200px;
-    height: 300px;
-    float: left;
+.caixa{
+    background-color: white;
+    margin: auto;
+    padding: 30px;
+    width: 30%;
+    height: 30%;
+    align-items: center;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(180, 180, 180);
 }
 
-.opcao{
-    width: 150px;
-    padding: 10px;
+#titulo{
+    font-size: 21px;
+    color: rgb(60, 60, 60);
 }
 
-.titulo{
-    width: 150px;
-    padding: 10px;
-    color:royalblue;
+#logo{
+    height: 65px;
+}
+
+.login {
+    border-top-color: rgb(180, 180, 180);
+    border-top-width: 1px ;
+    border-top-style: solid;
 
 }
 
-p{
-    text-align: justify;
-}
-
-.formulario{
-    display: inline;
-    clear: left;
+.login p{
+    padding: 0 50px;
+    color: rgb(60, 60, 60);
 }
 
 .campo{
-    background-color: cadetblue;
-    margin: 0 15px;
-    padding: 15px;
+    width: 270px;
+    height: 22px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(180, 180, 180);
+}
+
+#botao{
+    width: 100px;
+    height: 25px;
 }
 
 img{
     height: 300px ;
-}
-
-.opcao:hover{
-    background-color:white;
-    color: black;
 }

@@ -1,50 +1,88 @@
 body {
-    width: 900px;
-    margin: 30px auto;
+    width: 100%;
+    margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.cabecalho{
+    background-color: rgb(60, 60, 60);
+    width: 100%;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 18px ;
+    vertical-align: middle;
+    color: rgba(255 , 255 , 255, 90%);
+    position: relative;
+}
+
+.cabecalho p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
 .menu{
-    background-color:thistle;
-    margin: 0 20px 0 0;
-    padding: 10px 20px 10px;
+    background-color: rgb(48, 48, 48);
     float: left;
+    width: 22%;
 }
 
 .opcao{
-    width: 150px;
-    padding: 10px;
+    padding: 15px 10px 15px 25px;
+    font-size: 17px ;
+    color: rgba(255 , 255 , 255, 40%);
 }
 
-.titulo{
-    width: 150px;
-    padding: 10px;
-    color:royalblue;
+.linkopcao:link {
+    text-decoration: none;
+    color: rgba(255 , 255 , 255, 80%);
 }
 
-p{
-    text-align: justify;
+.linkopcao:active {
+    text-decoration: none;
 }
+
+.linkopcao:visited {
+    text-decoration: none;
+    color: rgba(255 , 255 , 255, 80%);
+}
+
+.linkopcao:hover {
+    text-decoration: underline;
+    color: rgba(255 , 255 , 255, 80%);
+}
+
+.opcao:hover{
+    background-color:rgb(60, 60, 60);
+}
+
+
+
+
+
+
+.subtitulo{
+    padding: 15px 10px 5px;
+    font-size: 15px ;
+    color: rgba(255 , 255 , 255, 50%);
+    border-top-color: rgba(255 , 255 , 255, 20%);
+    border-top-width: 2px ;
+    border-top-style: solid;
+}
+
 
 .formulario{
     display: inline;
     clear: left;
 }
 
-.campo{
-    background-color: cadetblue;
-    margin: 0 15px;
-    padding: 15px;
-}
+
 
 img{
     height: 300px ;
 }
 
-.opcao:hover{
-    background-color:white;
-    color: black;
-}
 
 #validar{
     font-size: 13px;
