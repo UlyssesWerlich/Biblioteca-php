@@ -5,10 +5,6 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-
-    $logado = $_SESSION['login'];
-
-    $titulo = "Registrar Ocorrência";
     include('../paginaBase/cabecalho.php');
 
     $ocorrencia = $_POST['ocorrencia'];
@@ -25,9 +21,12 @@
     $inserir=$pdo->prepare("Insert into ocorrencia(titulo, ocorrencia, dataOcorrencia) Values('$tituloOcorrencia', '$ocorrencia', '$data');");
     $inserir->execute();
     $pdo = null;
-    echo "<p>Ocorrência registrada com sucesso</p>
-            <p><a href='../pagina/registrarOcorrencia.php'>Registrar próxima ocorrência</a></p>";
-
-    $nome = $_SESSION['nome_usuario'];
-    include('../paginaBase/rodape.php');
 ?>
+
+    <div class='bloco'>
+        <p id='titulo'>Registrar Ocorrência</p>
+        <p><br/>Ocorrência registrada com sucesso</p>
+        <p><a href='../pagina/registrarOcorrencia.php'>Registrar próxima ocorrência</a></p>
+    </div>
+</body>
+</html>

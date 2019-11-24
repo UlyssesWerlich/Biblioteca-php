@@ -2,13 +2,14 @@ body {
     width: 100%;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 18px ;
 }
 
 .cabecalho{
     background-color: rgb(60, 60, 60);
     width: 100%;
     height: 50px;
-    padding: 0 30px;
     font-size: 18px ;
     vertical-align: middle;
     color: rgba(255 , 255 , 255, 90%);
@@ -17,6 +18,7 @@ body {
 
 .cabecalho p {
     margin: 0;
+    padding: 0 0 0 30px;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
@@ -57,11 +59,6 @@ body {
     background-color:rgb(60, 60, 60);
 }
 
-
-
-
-
-
 .subtitulo{
     padding: 15px 10px 5px;
     font-size: 15px ;
@@ -71,18 +68,93 @@ body {
     border-top-style: solid;
 }
 
-
-.formulario{
-    display: inline;
-    clear: left;
+.bloco{
+    padding: 5px 0 0 45px;
+    margin: 0 0 0 22%;
+    display: block;
 }
 
-
-
-img{
-    height: 300px ;
+#titulo{
+    font-size: 30px;
+    font-weight: bold;
 }
 
+.tabela table{
+	font-size: 18px;
+	border: solid 1px;
+    width: 70%;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.tabela td {
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.tabela tr {
+    text-align:center;
+    height: 30px;
+}
+
+.linha1{
+    background-color: rgb(10, 19, 95);
+    color: rgb(230, 230, 230);
+}
+
+.linha2{
+    background-color: rgb(210, 210, 210);
+    color: rgb(30, 30, 30);
+}
+
+.linha3{
+    background-color: rgb(127, 177, 199);
+    color: rgb(30, 30, 30);
+}
+
+.campo {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(180, 180, 180);
+    height: 22px;
+    font-size: 17px;
+}
+
+.botao{
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(180, 180, 180);
+    height: 30px;
+    width: 200px;
+    font-size: 17px;
+    background-color:  rgb(10, 19, 95);
+}
+
+.botao:hover{
+    background-color:  rgb(21, 33, 134);
+}
+
+.formulario {
+    padding: 0 0 0 25px;
+}
+
+.blocoUsuarios{
+    padding: 10px 10px;
+    display: block;
+    height: auto;
+    width: 300px;
+    background-color: rgba(10, 19, 70, 0.95);
+    color: rgb(200, 200, 200); 
+}
+
+.blocoUsuarios p{
+    padding: 0 15px;
+    margin: 5px ;
+}
+.blocoUsuarios a{
+    color: rgb(200, 200, 200);
+}
 
 #validar{
     font-size: 13px;

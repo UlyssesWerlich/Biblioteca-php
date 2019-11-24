@@ -30,12 +30,11 @@
     <meta charset="utf-8" />
     <title>Biblioteca USJ</title>
     <link rel="stylesheet" href="../estilo/estilo.css"/>
-
 </head>
 
 <body>
     <div class="cabecalho">
-        <p id='titulo'>USJ - Sistema de Registro de Entradas na Biblioteca</p>
+        <p id='tituloCabecalho'>USJ - Sistema de Registro de Entradas na Biblioteca</p>
         <!--    <p id='camponome'>Seja bem vindo, <?php //echo "$nome"?></p>-->
     </div>
 

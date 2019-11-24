@@ -5,9 +5,6 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-        $logado = $_SESSION['login'];
-
-    $titulo = "Registrar Visita";
     include('../paginaBase/cabecalho.php');
 
     $qtdPessoas = $_POST['qtdPessoas'];
@@ -21,13 +18,15 @@
         echo "<script> console('$e->getMessage()')";
     }
 
-        $data = date('Y-m-d H:m:s');
-        $inserir=$pdo->prepare("Insert into visita(qtdPessoas, dataVisita, tipoEntrada) Values('$qtdPessoas', '$data','$tipoEntrada');");
-        $inserir->execute();
-        $pdo = null;
-        echo "<p>Visita registrada com sucesso</p><br/>
-                <p><a href='../pagina/adicionarVisita.php'>Registrar próxima visita</a></p>";
-
-    $nome = $_SESSION['nome_usuario'];
-    include('../paginaBase/rodape.php');
+    $data = date('Y-m-d H:m:s');
+    $inserir=$pdo->prepare("Insert into visita(qtdPessoas, dataVisita, tipoEntrada) Values('$qtdPessoas', '$data','$tipoEntrada');");
+    $inserir->execute();
+    $pdo = null;
 ?>
+    <div class='bloco'>
+        <p id='titulo'>Registrar Visita</p>
+        <p><br/>Visita registrada com sucesso</p>
+        <p><a href='../pagina/adicionarVisita.php'>Registrar próxima visita</a></p>
+    </div>
+</body>
+</html>

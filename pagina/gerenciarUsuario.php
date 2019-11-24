@@ -1,20 +1,16 @@
 <?php
-
-session_start();
-if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
-    unset($_SESSION['login']);
-    unset($_SESSION['senha']);
-    header('location: ../index.php');
-}
-    $logado = $_SESSION['login'];
-    
-    $titulo = "Usuários";
+    session_start();
+    if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
+        unset($_SESSION['login']);
+        unset($_SESSION['senha']);
+        header('location: ../index.php');
+    }
     include('../paginaBase/cabecalho.php');
-
 ?>
-    <div class='listaUsuarios'>
-        <?php
 
+    <div class='bloco'>
+        <p id='titulo'>Usuários</p>
+        <?php
             try {
                 $pdo = new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
             } catch (PDOException $e){
@@ -25,25 +21,26 @@ if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == tr
             $consulta->execute();
             $resultado = $consulta->fetchAll();
 
+            echo "
+                <div class='blocoUsuarios'>
+                    <p><a href='adicionarUsuario.php'><b>+</b> Adicionar Usuário</a></p>
+                </div>
+                <br/>";
+
             foreach ($resultado as $row){
+
                 echo "
                     <div class='blocoUsuarios'>
-                        <h3>$row[nome]</h3>
-                        <p><a href='editarUsuario.php?login=$row[login]'>$row[login]</a><br/>
-                        CPF: $row[cpf] <br/>
-                        Telefone: $row[telefone] </p>
+                        <p><b>$row[nome]</b></p>
+                        <p><a href='editarUsuario.php?login=$row[login]'>$row[login]</a></p>
+                        <p>CPF: $row[cpf] </p>
+                        <p>Telefone: $row[telefone] </p>
                     </div>
+                    <br/>
                 ";
             }
-            echo "<div class='blocoUsuarios'>
-                <p><a href='adicionarUsuario.php'>Adicionar Usuário</a></p>
-            </div>";
 
         ?>
-
     </div>
-
-<?php
-    $nome = $_SESSION['nome_usuario'];
-    include('../paginaBase/rodape.php');
-?>
+</body>
+</html>
