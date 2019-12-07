@@ -203,7 +203,7 @@
     $pdo = null;
 ?>
 
-        <p><a href='../pagina/gerarRelatorio.php'>Gerar outro relatório</a></p>
+        <p><a href='../pagina/gerarRelatorio.php'>Gerar outro relatório</a></p><br/><br/>
     </div>
 </body>
 </html>

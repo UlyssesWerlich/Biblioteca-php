@@ -9,7 +9,7 @@
 ?>
 
     <section class='bloco'> 
-        <p id='titulo'>Bem vindo<p>
+        <p id='titulo'>Bem vindo</p>
     </section>
 </body>
 </html>
