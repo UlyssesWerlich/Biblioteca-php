@@ -17,7 +17,7 @@
         echo "<script> console('$e->getMessage()')</script>";
     }
 
-    $consulta = $pdo->prepare("select  
+    $consulta = $pdo->prepare("SELECT  
                                 DATE_FORMAT( dataOcorrencia, '%d/%c/%Y' ) AS data,
                                 DATE_FORMAT( dataOcorrencia, '%H:%i' ) AS hora,
                                 titulo,

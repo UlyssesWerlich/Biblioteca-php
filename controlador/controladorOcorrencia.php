@@ -17,6 +17,7 @@
         echo "<script> console('$e->getMessage()')";
     }
 
+    date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d H:m:s');
     $inserir=$pdo->prepare("Insert into ocorrencia(titulo, ocorrencia, dataOcorrencia) Values('$tituloOcorrencia', '$ocorrencia', '$data');");
     $inserir->execute();

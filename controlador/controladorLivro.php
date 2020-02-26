@@ -18,6 +18,8 @@
         echo "<p>Erro ao registrar quantitativo de livros</p>";
         echo "<script> console('$e->getMessage()')";
     }
+
+    date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d');
     $verificar=$pdo->prepare("select * from qtdlivros where dataRegistro like '$data'");
     $verificar->execute();

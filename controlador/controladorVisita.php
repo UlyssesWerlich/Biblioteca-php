@@ -18,6 +18,7 @@
         echo "<script> console('$e->getMessage()')";
     }
 
+    date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d H:m:s');
     $inserir=$pdo->prepare("Insert into visita(qtdPessoas, dataVisita, tipoEntrada) Values('$qtdPessoas', '$data','$tipoEntrada');");
     $inserir->execute();
