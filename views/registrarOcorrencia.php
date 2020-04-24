@@ -11,7 +11,7 @@
     <div class='bloco'> 
         <p id='titulo'>Registrar ocorrência<p>
         <div class='formulario'>
-            <form name='visita' method='POST' action='../controlador/controladorOcorrencia.php'>
+            <form name='visita' method='POST' action='../controllers/ocorrencia.php'>
                 <p>Título da Ocorrência:</p>
                     <input class='campo' type='text' name='tituloOcorrencia'/>
                 <p>Ocorrência:</p>

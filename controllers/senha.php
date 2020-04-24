@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -11,12 +13,7 @@
     $senhaNova = $_POST['senhaNova'];
     $login = $_SESSION['login'];
 
-    try {
-        $pdo = new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
-    $verificarSenha = $pdo->prepare("select login from usuario where login like '$login' and senha like '$senha';");
+    $verificarSenha = $pdo->prepare("SELECT login from usuario where login like '$login' and senha like '$senha';");
     $verificarSenha->execute();
     $resultado = $verificarSenha->fetchAll();
 

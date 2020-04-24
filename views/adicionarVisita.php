@@ -11,7 +11,7 @@
     <div class='bloco'>
         <p id='titulo'>Informar visita</p>
         <div class='formulario'>
-            <form name='visita' method='POST' action='../controlador/controladorVisita.php'>
+            <form name='visita' method='POST' action='../controllers/visita.php'>
                 <p>Quantidade de pessoas que entraram:</p>
                     <input class='campo' type='text' size='6' name='qtdPessoas'/>
                 <p>Entrada de:<br/><br/>

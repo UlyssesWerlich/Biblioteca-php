@@ -11,7 +11,7 @@
     <div class='bloco'> 
         <p id='titulo'>Gerar Relatório<p>
         <div class='formulario'>
-            <form name='visita' method='POST' action='../controlador/controladorRelatorio.php'>
+            <form name='visita' method='POST' action='../controllers/relatorio.php'>
                 <p>Data de inicio da consulta</p>
                     <input class='campo' type="date" name="dataInicio">
                 <p>Data final da consulta </p>

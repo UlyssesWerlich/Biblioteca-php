@@ -10,7 +10,7 @@
     <div class='bloco'>
         <p id='titulo'>Trocar senha<p>
         <div class='formulario'>
-            <form id='senhaForm' method="POST" action='../controlador/controladorSenha.php'>
+            <form id='senhaForm' method="POST" action='../controllers/senha.php'>
                 <p>Senha atual</p>
                     <input class='campo' type='password' id='senhaAtual' name='senhaAtual' required/>
                 <p>Nova senha</p>

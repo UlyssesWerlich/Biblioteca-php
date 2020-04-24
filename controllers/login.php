@@ -1,4 +1,5 @@
 <?php
+    require_once '../database/connection.php';
 
     if (empty($_POST['login'])) {
         header("Location: ../index.php?usuario=false"); 
@@ -7,12 +8,6 @@
 
     session_start();
     $login = $_POST['login'];
-
-    try {
-        $pdo =new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
 
     $consulta = $pdo->prepare("select login, senha, nome, permissao from usuario where login like '$login'");
     $consulta->execute();

@@ -10,7 +10,7 @@
     <div class='bloco'>
         <p id='titulo'>Adicionar usuário</p>
         <div class='formulario'>
-            <form name='usuario' method='POST' action='../controlador/controladorUsuario.php'>
+            <form name='usuario' method='POST' action='../controllers/usuario.php'>
                 <p>Nome<br/>
                     <input class='campo' type='text' name='nome'/></p>
                 <p>Login<br/>

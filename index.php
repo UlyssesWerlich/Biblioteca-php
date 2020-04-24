@@ -15,7 +15,7 @@
 
 
         <div class='login'>
-            <form name="login" method="POST" action="controlador/controladorLogin.php">
+            <form name="login" method="POST" action="controllers/login.php">
                 <p>Usuário<br/>
                     <input class='campo' type="text" name="login"></p>  
                 <p>Senha<br/>

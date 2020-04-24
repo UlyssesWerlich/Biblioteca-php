@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -8,11 +10,7 @@
     include('../paginaBase/cabecalho.php');
 
     $login = $_GET['login'];
-    try {
-        $pdo =new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
-    } catch (PDOException $e) {
-        echo $e->getMessage();
-    }
+
     $consulta = $pdo->prepare("select * from usuario where login like '$login'");
     $consulta->execute();
     $resultado = $consulta->fetchAll();
@@ -22,7 +20,7 @@
         <div class='bloco'>
             <p id='titulo'>Editar usuário</p>
             <div class='formulario'>
-                <form name='usuario' method='POST' action='../controlador/controladorUsuario.php'>
+                <form name='usuario' method='POST' action='../controllers/usuario.php'>
                     <p>Id do usuário<br/>
                         <input class='campo' type='text' name='id_usuario' value='$row[id_usuario]' readonly></p>
                     <p>Nome<br/>

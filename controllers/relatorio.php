@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -17,12 +19,6 @@
         <p id='titulo'>Relatório</p>
 
 <?php
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
-        echo "<p>Erro ao gerar relatório</p>";
-        echo "<script> console('$e->getMessage()')</script>";
-    }
 
     if ($tipo == 'visita'){
         $consulta1=$pdo->prepare("select sum(qtdPessoas) as soma,

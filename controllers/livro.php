@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -11,13 +13,6 @@
     $livrosEmprestados = $_POST['livrosEmprestados'];
     $livrosDevolvidos = $_POST['livrosDevolvidos'];
     $livrosNovos = $_POST['livrosNovos'];
-
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
-        echo "<p>Erro ao registrar quantitativo de livros</p>";
-        echo "<script> console('$e->getMessage()')";
-    }
 
     date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d');

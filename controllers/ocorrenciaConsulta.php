@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -10,12 +12,6 @@
     $dataInicio = $_GET['dataInicio'];
     $dataFim = $_GET['dataFim'];
     $id_ocorrencia = $_GET['id_ocorrencia'];
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
-        echo "<p>Erro ao gerar relatório</p>";
-        echo "<script> console('$e->getMessage()')</script>";
-    }
 
     $consulta = $pdo->prepare("SELECT  
                                 DATE_FORMAT( dataOcorrencia, '%d/%c/%Y' ) AS data,

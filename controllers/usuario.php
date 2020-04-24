@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -24,11 +26,6 @@
         <p id='titulo'>Editar usuário<p>
 
 <?php
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
-        echo $e->getMessage();
-    }
 
     if ($botao == 'Excluir'){
         $id_usuario = $_POST['id_usuario'];

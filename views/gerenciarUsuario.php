@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -11,11 +13,6 @@
     <div class='bloco'>
         <p id='titulo'>Usuários</p>
         <?php
-            try {
-                $pdo = new PDO("mysql:host=localhost;dbname=biblioteca","root", "password");
-            } catch (PDOException $e){
-                echo $e->getMessage();
-            }
 
             $consulta = $pdo->prepare("select nome, login, cpf, telefone from usuario");
             $consulta->execute();

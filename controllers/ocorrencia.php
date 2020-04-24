@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -9,13 +11,6 @@
 
     $ocorrencia = $_POST['ocorrencia'];
     $tituloOcorrencia = $_POST['tituloOcorrencia'];
-
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
-        echo "<p>Erro ao registrar ocorrência</p>";
-        echo "<script> console('$e->getMessage()')";
-    }
 
     date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d H:m:s');

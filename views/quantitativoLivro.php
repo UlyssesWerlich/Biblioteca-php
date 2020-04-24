@@ -11,7 +11,7 @@
     <div class='bloco'>
         <p id='titulo'>Registrar quantitativo de livros<p>
         <div class='formulario'>
-            <form name='livro' method='POST' action='../controlador/controladorLivro.php'>
+            <form name='livro' method='POST' action='../controllers/livro.php'>
                 <p>Livros emprestados</p>
                     <input class='campo' size='6' type='text' name='livrosEmprestados'/>
                 <p>Livros devolvidos</p>

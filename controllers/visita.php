@@ -1,4 +1,6 @@
 <?php
+    require_once '../database/connection.php';
+
     session_start();
     if ((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true)){
         unset($_SESSION['login']);
@@ -10,13 +12,6 @@
     $qtdPessoas = $_POST['qtdPessoas'];
     $tipoEntrada = $_POST['tipoEntrada'];
     $botao = $_POST['botao'];
-
-    try{
-        $pdo=new PDO("mysql:host=localhost;dbname=biblioteca","root","password");
-    }catch(PDOException $e){
-        echo "<p>Erro ao acessar o controlador</p>";
-        echo "<script> console('$e->getMessage()')";
-    }
 
     date_default_timezone_set('America/Sao_Paulo');
     $data = date('Y-m-d H:m:s');
