@@ -7,7 +7,7 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-    include('../paginaBase/cabecalho.php');
+    include('../includes/cabecalho.php');
 
     $senha = $_POST['senhaAtual'];
     $senhaNova = $_POST['senhaNova'];

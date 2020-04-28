@@ -7,7 +7,7 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-    include('../paginaBase/cabecalho.php');
+    include('../includes/cabecalho.php');
 
     $dataInicio = $_GET['dataInicio'];
     $dataFim = $_GET['dataFim'];

@@ -8,7 +8,7 @@
         header('location: ../index.php');
     }
     $titulo = "Registrar Quantitativo de Livros";
-    include('../paginaBase/cabecalho.php');
+    include('../includes/cabecalho.php');
 
     $livrosEmprestados = $_POST['livrosEmprestados'];
     $livrosDevolvidos = $_POST['livrosDevolvidos'];

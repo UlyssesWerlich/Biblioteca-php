@@ -7,7 +7,7 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-    include('../paginaBase/cabecalho.php');
+    include('../includes/cabecalho.php');
 
     $dataInicio = (empty($_POST['dataInicio']))?(date('Y-m-d')):($_POST['dataInicio']);
     $dataFim = (empty($_POST['dataFim']))?(date('Y-m-d')):($_POST['dataFim']);

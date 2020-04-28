@@ -5,7 +5,7 @@
         unset($_SESSION['senha']);
         header('location: ../index.php');
     }
-        include('../paginaBase/cabecalho.php');
+        include('../includes/cabecalho.php');
 ?>
 
     <section class='bloco'> 
